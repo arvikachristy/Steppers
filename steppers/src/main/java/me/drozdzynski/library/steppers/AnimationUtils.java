@@ -16,11 +16,8 @@
 
 package me.drozdzynski.library.steppers;
 
-import android.content.Context;
-import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -114,6 +111,7 @@ public class AnimationUtils {
             lp.height = (int) (mStartHeight + mDeltaHeight * interpolatedTime);
             mView.setLayoutParams(lp);
         }
+
 
         @Override
         public boolean willChangeBounds() {

@@ -26,6 +26,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import java.util.HashMap;
 import java.util.List;
@@ -111,6 +112,10 @@ public class SteppersAdapter extends RecyclerView.Adapter<SteppersViewHolder> {
             }
         });
 
+        //New Addition
+        holder.buttonCancel.setVisibility(View.GONE);
+        holder.buttonContinue.setLayoutParams(new LinearLayout.LayoutParams(400, 150));
+
         if (position == getItemCount() - 1) holder.buttonContinue.setText(context.getResources().getString(R.string.step_finish));
         else holder.buttonContinue.setText(context.getResources().getString(R.string.step_continue));
 
@@ -122,13 +127,13 @@ public class SteppersAdapter extends RecyclerView.Adapter<SteppersViewHolder> {
             }
         });
 
-        if(config.getOnCancelAction() != null)
-            holder.buttonCancel.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    config.getOnCancelAction().onCancel();
-                }
-            });
+//        if(config.getOnCancelAction() != null)
+//            holder.buttonCancel.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    config.getOnCancelAction().onCancel();
+//                }
+//            });
 
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
